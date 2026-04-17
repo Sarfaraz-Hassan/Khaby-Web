@@ -11,141 +11,136 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         
-        /* THE PAGE SYSTEM */
-        .page-section { display: none; } /* Everything is hidden by default */
-        .page-section.active { display: block; animation: fadeIn 0.5s ease-in; }
+        /* THE PAGE SYSTEM - This is what hides/shows sections */
+        .page-section { display: none; min-height: 100vh; padding-top: 100px; }
+        .page-section.active { display: block; animation: fadeIn 0.4s ease-in; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* LUXURY BUTTON */
         .btn-luxury-main {
             display: inline-block;
-            padding: 20px 50px;
+            padding: 18px 40px;
             background: transparent;
             border: 1px solid var(--charcoal);
             font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.5em;
+            letter-spacing: 0.4em;
             text-transform: uppercase;
             color: var(--charcoal);
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .btn-luxury-main:hover {
-            background: var(--charcoal);
-            color: white;
-        }
+        .btn-luxury-main:hover { background: var(--charcoal); color: white; }
 
-        .nav-blur { backdrop-filter: blur(15px); background: rgba(253, 251, 250, 0.9); }
+        .nav-blur { backdrop-filter: blur(15px); background: rgba(253, 251, 250, 0.95); }
+        
+        /* Ensure the nav links are always clickable */
+        .nav-link { cursor: pointer; transition: color 0.3s; }
+        .nav-link:hover { color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <nav class="nav-blur fixed w-full z-[100] border-b border-stone-100">
-        <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
+    <nav class="nav-blur fixed top-0 w-full z-[100] border-b border-stone-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex flex-col cursor-pointer" onclick="navigateTo('hero-page')">
                 <span class="serif text-xl font-bold tracking-tight">KISWAH</span>
                 <span class="text-[8px] uppercase tracking-[0.4em] text-stone-400">OrganicCare</span>
             </div>
             
-            <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.2em] font-semibold text-stone-500">
-                <a href="javascript:void(0)" onclick="navigateTo('philosophy')" class="hover:text-stone-900">Philosophy</a>
-                <a href="javascript:void(0)" onclick="navigateTo('ingredients')" class="hover:text-stone-900">Science</a>
-                <a href="javascript:void(0)" onclick="navigateTo('collection')" class="hover:text-stone-900 transition">Collection</a>
+            <div class="flex space-x-4 md:space-x-8 text-[9px] md:text-[10px] uppercase tracking-[0.1em] font-bold text-stone-600">
+                <span class="nav-link" onclick="navigateTo('philosophy')">Story</span>
+                <span class="nav-link" onclick="navigateTo('ingredients')">Science</span>
+                <span class="nav-link" onclick="navigateTo('collection')">Products</span>
             </div>
-
-            <a href="https://wa.me/923242771691" class="text-[10px] font-bold uppercase tracking-widest border-b border-stone-900">Contact</a>
         </div>
     </nav>
 
-    <section id="hero-page" class="page-section active relative min-h-screen flex items-center justify-center text-center px-6">
+    <section id="hero-page" class="page-section active flex items-center justify-center text-center px-6" style="padding-top: 0;">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
         <div class="relative z-10">
-            <span class="text-[11px] font-bold tracking-[0.6em] uppercase text-[#C5A059] mb-4 block">Artisan Skin Nutrition</span>
-            <h1 class="serif text-5xl md:text-8xl mb-10">Pure <span class="italic text-stone-400">Radiance</span></h1>
+            <span class="text-[10px] font-bold tracking-[0.6em] uppercase text-[#C5A059] mb-4 block">Artisan Skin Nutrition</span>
+            <h1 class="serif text-5xl md:text-7xl mb-10">Pure <span class="italic text-stone-400">Radiance</span></h1>
             <button onclick="navigateTo('collection')" class="btn-luxury-main">Explore Ritual</button>
         </div>
     </section>
 
-    <section id="philosophy" class="page-section py-32 px-8 pt-40 min-h-screen">
-        <div class="max-w-4xl mx-auto">
-            <h2 class="serif text-4xl mb-8">Philosophy</h2>
-            <p class="text-lg text-stone-600 font-light leading-relaxed mb-12">Expertly crafted for the modern woman to eliminate dullness and hyperpigmentation through botanical intelligence.</p>
-            <button onclick="navigateTo('hero-page')" class="text-[10px] uppercase font-bold tracking-widest text-stone-400 underline">Back Home</button>
+    <section id="philosophy" class="page-section px-8">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="serif text-4xl mb-8">The Philosophy</h2>
+            <p class="text-lg text-stone-600 font-light leading-relaxed mb-12">Expertly crafted for the modern woman to eliminate dullness and hyperpigmentation through botanical intelligence. We believe in repair over masking.</p>
+            <button onclick="navigateTo('hero-page')" class="text-[9px] uppercase tracking-widest font-bold text-stone-400 border-b border-stone-200">Return Home</button>
         </div>
     </section>
 
-    <section id="ingredients" class="page-section py-32 px-8 bg-[#F8F7F5] pt-40 min-h-screen">
+    <section id="ingredients" class="page-section px-8 bg-[#F8F7F5]">
         <div class="max-w-7xl mx-auto">
-            <h2 class="serif text-4xl mb-16 text-center">Botanical Science</h2>
+            <h2 class="serif text-4xl mb-16 text-center">Active Science</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 bg-white rounded-xl border border-stone-100">
-                    <h3 class="serif text-2xl mb-4 text-[#8DA290]">Shea Butter</h3>
-                    <p class="text-stone-500 text-sm">Rich in fatty acids that penetrate deeply to repair skin.</p>
+                <div class="p-8 bg-white border border-stone-100 rounded-lg">
+                    <h3 class="serif text-xl mb-4 text-[#8DA290]">Shea Butter</h3>
+                    <p class="text-sm text-stone-500">Deep moisture repair for the 28-day skin cycle.</p>
                 </div>
-                <div class="p-10 bg-white rounded-xl border border-stone-100">
-                    <h3 class="serif text-2xl mb-4 text-[#8DA290]">Rice Extract</h3>
-                    <p class="text-stone-500 text-sm">Natural brightening agent for a glowing complexion.</p>
+                <div class="p-8 bg-white border border-stone-100 rounded-lg">
+                    <h3 class="serif text-xl mb-4 text-[#8DA290]">Rice Extract</h3>
+                    <p class="text-sm text-stone-500">Natural brightening and tone correction.</p>
                 </div>
-                <div class="p-10 bg-white rounded-xl border border-stone-100">
-                    <h3 class="serif text-2xl mb-4 text-[#8DA290]">Coffee Extract</h3>
-                    <p class="text-stone-500 text-sm">Energizes skin and boosts immediate freshness.</p>
+                <div class="p-8 bg-white border border-stone-100 rounded-lg">
+                    <h3 class="serif text-xl mb-4 text-[#8DA290]">Coffee Bean</h3>
+                    <p class="text-sm text-stone-500">Freshness and micro-circulation boost.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="collection" class="page-section py-32 px-8 pt-40 min-h-screen">
+    <section id="collection" class="page-section px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="serif text-4xl mb-16">The Ritual</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <div>
-                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
-                        <img src="images/moisturizer.jpg" alt="Moisturizer" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl mb-4">Shea Moisturizer</h3>
-                    <div class="flex justify-between items-center border-t pt-4 border-stone-100">
-                        <span class="text-sm">Rs. 599</span>
-                        <a href="https://wa.me/923242771691?text=Order%3A%20Shea%20Moisturizer" target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
-                    </div>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/moisturizer.jpg" alt="Moisturizer" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-lg mb-2">Shea Moisturizer</h3>
+                    <div class="flex justify-between items-center border-t pt-4 border-stone-100"><span class="text-sm">Rs. 599</span><a href="https://wa.me/923242771691?text=Order%3A%20Shea%20Moisturizer" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order</a></div>
                 </div>
                 <div>
-                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
-                        <img src="images/facewash.jpg" alt="Face Wash" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl mb-4">Coffee Face Wash</h3>
-                    <div class="flex justify-between items-center border-t pt-4 border-stone-100">
-                        <span class="text-sm">Rs. 399</span>
-                        <a href="https://wa.me/923242771691?text=Order%3A%20Coffee%20Face%20Wash" target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
-                    </div>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/facewash.jpg" alt="Face Wash" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-lg mb-2">Coffee Face Wash</h3>
+                    <div class="flex justify-between items-center border-t pt-4 border-stone-100"><span class="text-sm">Rs. 399</span><a href="https://wa.me/923242771691?text=Order%3A%20Coffee%20Face%20Wash" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order</a></div>
+                </div>
+                <div>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/mask.jpg" alt="Mask" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-lg mb-2">Radiance Mask</h3>
+                    <div class="flex justify-between items-center border-t pt-4 border-stone-100"><span class="text-sm">Rs. 299</span><a href="https://wa.me/923242771691?text=Order%3A%20Mask" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order</a></div>
+                </div>
+                <div>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/soap.jpg" alt="Soap" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-lg mb-2">Botanical Soap</h3>
+                    <div class="flex justify-between items-center border-t pt-4 border-stone-100"><span class="text-sm">Rs. 259</span><a href="https://wa.me/923242771691?text=Order%3A%20Soap" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order</a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-stone-900 text-white py-12 px-8 text-center">
-        <div class="flex justify-center space-x-12 mb-6 text-[10px] uppercase tracking-widest text-stone-500">
-            <a href="https://www.instagram.com/kiswah.organiccare?igsh=b3ZndTJmbTkydXIx" target="_blank">Instagram</a>
-            <a href="https://wa.me/923242771691" target="_blank">WhatsApp</a>
+    <footer class="bg-stone-900 text-white py-12 px-8 text-center mt-20">
+        <div class="flex justify-center space-x-12 mb-6">
+            <a href="https://www.instagram.com/kiswah.organiccare?igsh=b3ZndTJmbTkydXIx" target="_blank" class="text-[9px] uppercase tracking-widest">Instagram</a>
+            <a href="https://wa.me/923242771691" target="_blank" class="text-[9px] uppercase tracking-widest">WhatsApp</a>
         </div>
-        <p class="text-[8px] text-stone-700 uppercase tracking-[0.4em]">© 2026 KISWAH ORGANICCARE.</p>
+        <p class="text-[8px] text-stone-600 uppercase tracking-[0.4em]">© 2026 KISWAH ORGANICCARE.</p>
     </footer>
 
     <script>
         function navigateTo(id) {
-            // Hide all sections
-            document.querySelectorAll('.page-section').forEach(section => {
-                section.classList.remove('active');
-            });
+            // 1. Hide every page-section
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(s => s.classList.remove('active'));
 
-            // Show target section
+            // 2. Show only the one you clicked
             const target = document.getElementById(id);
             if (target) {
                 target.classList.add('active');
-                window.scrollTo(0, 0); // Always start at the top of the "new" page
+                window.scrollTo(0, 0); // Reset scroll to top of "new" page
             }
         }
     </script>
