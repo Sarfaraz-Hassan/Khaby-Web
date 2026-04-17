@@ -8,161 +8,146 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         :root { --sage: #8DA290; --gold: #C5A059; --cream: #FDFBFA; --charcoal: #1A1A1A; }
-        
-        /* THIS MAKES THE JUMP SMOOTH */
-        html { scroll-behavior: smooth; }
-
-        body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); }
+        body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); margin: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         
-        .nav-blur { backdrop-filter: blur(15px); background: rgba(253, 251, 250, 0.8); }
+        /* THE PAGE SYSTEM */
+        .page-section { display: none; } /* Everything is hidden by default */
+        .page-section.active { display: block; animation: fadeIn 0.5s ease-in; }
 
-        /* PREMIUM BUTTON DESIGN */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* LUXURY BUTTON */
         .btn-luxury-main {
             display: inline-block;
-            padding: 18px 45px;
+            padding: 20px 50px;
             background: transparent;
             border: 1px solid var(--charcoal);
             font-size: 10px;
             font-weight: 800;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.5em;
             text-transform: uppercase;
             color: var(--charcoal);
-            transition: all 0.4s ease;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
-
         .btn-luxury-main:hover {
             background: var(--charcoal);
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
 
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        .nav-blur { backdrop-filter: blur(15px); background: rgba(253, 251, 250, 0.9); }
     </style>
 </head>
 <body>
 
     <nav class="nav-blur fixed w-full z-[100] border-b border-stone-100">
         <div class="max-w-7xl mx-auto px-8 py-5 flex justify-between items-center">
-            <div class="flex flex-col">
+            <div class="flex flex-col cursor-pointer" onclick="navigateTo('hero-page')">
                 <span class="serif text-xl font-bold tracking-tight">KISWAH</span>
                 <span class="text-[8px] uppercase tracking-[0.4em] text-stone-400">OrganicCare</span>
             </div>
+            
             <div class="hidden md:flex space-x-8 text-[10px] uppercase tracking-[0.2em] font-semibold text-stone-500">
-                <a href="#philosophy" class="hover:text-stone-900">Philosophy</a>
-                <a href="#ingredients" class="hover:text-stone-900">Science</a>
-                <a href="#collection" class="hover:text-stone-900">Collection</a>
+                <a href="javascript:void(0)" onclick="navigateTo('philosophy')" class="hover:text-stone-900">Philosophy</a>
+                <a href="javascript:void(0)" onclick="navigateTo('ingredients')" class="hover:text-stone-900">Science</a>
+                <a href="javascript:void(0)" onclick="navigateTo('collection')" class="hover:text-stone-900 transition">Collection</a>
             </div>
-            <a href="https://wa.me/923242771691" target="_blank" class="text-[10px] font-bold uppercase tracking-widest border-b border-stone-900">Contact</a>
+
+            <a href="https://wa.me/923242771691" class="text-[10px] font-bold uppercase tracking-widest border-b border-stone-900">Contact</a>
         </div>
     </nav>
 
-    <header class="relative min-h-screen flex items-center justify-center text-center px-6">
+    <section id="hero-page" class="page-section active relative min-h-screen flex items-center justify-center text-center px-6">
         <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070')] bg-cover bg-center opacity-10"></div>
         <div class="relative z-10">
             <span class="text-[11px] font-bold tracking-[0.6em] uppercase text-[#C5A059] mb-4 block">Artisan Skin Nutrition</span>
-            <h1 class="serif text-6xl md:text-8xl mb-10">Pure <span class="italic text-stone-400">Radiance</span></h1>
-            <p class="max-w-md mx-auto text-stone-500 font-light mb-12">Premium organic skin repair for the modern aesthetic.</p>
-            
-            <a href="#collection" class="btn-luxury-main">Explore Ritual</a>
-        </div>
-    </header>
-
-    <section id="philosophy" class="py-32 px-8 bg-white border-t border-stone-50">
-        <div class="max-w-4xl mx-auto text-center reveal">
-            <h2 class="serif text-4xl mb-8">The Philosophy</h2>
-            <p class="text-lg text-stone-600 font-light leading-relaxed">We focus on the skin repair cycle of the 18-30 generation. Our products target hyperpigmentation and dullness at the source using botanical intelligence.</p>
+            <h1 class="serif text-5xl md:text-8xl mb-10">Pure <span class="italic text-stone-400">Radiance</span></h1>
+            <button onclick="navigateTo('collection')" class="btn-luxury-main">Explore Ritual</button>
         </div>
     </section>
 
-    <section id="ingredients" class="py-32 px-8 bg-[#F8F7F5]">
+    <section id="philosophy" class="page-section py-32 px-8 pt-40 min-h-screen">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="serif text-4xl mb-8">Philosophy</h2>
+            <p class="text-lg text-stone-600 font-light leading-relaxed mb-12">Expertly crafted for the modern woman to eliminate dullness and hyperpigmentation through botanical intelligence.</p>
+            <button onclick="navigateTo('hero-page')" class="text-[10px] uppercase font-bold tracking-widest text-stone-400 underline">Back Home</button>
+        </div>
+    </section>
+
+    <section id="ingredients" class="page-section py-32 px-8 bg-[#F8F7F5] pt-40 min-h-screen">
         <div class="max-w-7xl mx-auto">
-            <h2 class="serif text-4xl mb-16 text-center reveal">Botanical Science</h2>
+            <h2 class="serif text-4xl mb-16 text-center">Botanical Science</h2>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-10 bg-white rounded-xl reveal">
+                <div class="p-10 bg-white rounded-xl border border-stone-100">
                     <h3 class="serif text-2xl mb-4 text-[#8DA290]">Shea Butter</h3>
-                    <p class="text-stone-500 text-sm">Deeply penetrates to repair dry and damaged skin layers.</p>
+                    <p class="text-stone-500 text-sm">Rich in fatty acids that penetrate deeply to repair skin.</p>
                 </div>
-                <div class="p-10 bg-white rounded-xl reveal" style="transition-delay: 100ms;">
+                <div class="p-10 bg-white rounded-xl border border-stone-100">
                     <h3 class="serif text-2xl mb-4 text-[#8DA290]">Rice Extract</h3>
-                    <p class="text-stone-500 text-sm">Visibly brightens and targets uneven skin tones.</p>
+                    <p class="text-stone-500 text-sm">Natural brightening agent for a glowing complexion.</p>
                 </div>
-                <div class="p-10 bg-white rounded-xl reveal" style="transition-delay: 200ms;">
+                <div class="p-10 bg-white rounded-xl border border-stone-100">
                     <h3 class="serif text-2xl mb-4 text-[#8DA290]">Coffee Extract</h3>
-                    <p class="text-stone-500 text-sm">Energizes the skin for an immediate healthy glow.</p>
+                    <p class="text-stone-500 text-sm">Energizes skin and boosts immediate freshness.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="collection" class="py-32 px-8 bg-white">
+    <section id="collection" class="page-section py-32 px-8 pt-40 min-h-screen">
         <div class="max-w-7xl mx-auto">
-            <h2 class="serif text-4xl mb-16 reveal">The Collection</h2>
+            <h2 class="serif text-4xl mb-16">The Ritual</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="reveal">
+                <div>
                     <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
                         <img src="images/moisturizer.jpg" alt="Moisturizer" class="w-full h-full object-cover">
                     </div>
                     <h3 class="serif text-xl mb-4">Shea Moisturizer</h3>
                     <div class="flex justify-between items-center border-t pt-4 border-stone-100">
                         <span class="text-sm">Rs. 599</span>
-                        <a href="https://wa.me/923242771691?text=Hi! I want to order the Shea Moisturizer." target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
+                        <a href="https://wa.me/923242771691?text=Order%3A%20Shea%20Moisturizer" target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
                     </div>
                 </div>
-                <div class="reveal" style="transition-delay: 100ms;">
+                <div>
                     <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
                         <img src="images/facewash.jpg" alt="Face Wash" class="w-full h-full object-cover">
                     </div>
                     <h3 class="serif text-xl mb-4">Coffee Face Wash</h3>
                     <div class="flex justify-between items-center border-t pt-4 border-stone-100">
                         <span class="text-sm">Rs. 399</span>
-                        <a href="https://wa.me/923242771691?text=Hi! I want to order the Coffee Face Wash." target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
-                    </div>
-                </div>
-                <div class="reveal" style="transition-delay: 200ms;">
-                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
-                        <img src="images/mask.jpg" alt="Mask" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl mb-4">Radiance Mask</h3>
-                    <div class="flex justify-between items-center border-t pt-4 border-stone-100">
-                        <span class="text-sm">Rs. 299</span>
-                        <a href="https://wa.me/923242771691?text=Hi! I want to order the Radiance Mask." target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
-                    </div>
-                </div>
-                <div class="reveal" style="transition-delay: 300ms;">
-                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden">
-                        <img src="images/soap.jpg" alt="Soap" class="w-full h-full object-cover">
-                    </div>
-                    <h3 class="serif text-xl mb-4">Botanical Soap</h3>
-                    <div class="flex justify-between items-center border-t pt-4 border-stone-100">
-                        <span class="text-sm">Rs. 259</span>
-                        <a href="https://wa.me/923242771691?text=Hi! I want to order the Botanical Soap." target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
+                        <a href="https://wa.me/923242771691?text=Order%3A%20Coffee%20Face%20Wash" target="_blank" class="text-[9px] font-bold uppercase tracking-widest text-[#C5A059]">Order Now</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-stone-900 text-white py-20 px-8 text-center">
-        <div class="flex justify-center space-x-12 mb-8">
-            <a href="https://www.instagram.com/kiswah.organiccare?igsh=b3ZndTJmbTkydXIx" target="_blank" class="text-[10px] uppercase tracking-widest text-stone-400 hover:text-white">Instagram</a>
-            <a href="https://wa.me/923242771691" target="_blank" class="text-[10px] uppercase tracking-widest text-stone-400 hover:text-white">WhatsApp</a>
+    <footer class="bg-stone-900 text-white py-12 px-8 text-center">
+        <div class="flex justify-center space-x-12 mb-6 text-[10px] uppercase tracking-widest text-stone-500">
+            <a href="https://www.instagram.com/kiswah.organiccare?igsh=b3ZndTJmbTkydXIx" target="_blank">Instagram</a>
+            <a href="https://wa.me/923242771691" target="_blank">WhatsApp</a>
         </div>
-        <p class="text-[8px] text-stone-700 uppercase tracking-[0.4em]">© 2026 KISWAH ORGANICCARE. ALL RIGHTS RESERVED.</p>
+        <p class="text-[8px] text-stone-700 uppercase tracking-[0.4em]">© 2026 KISWAH ORGANICCARE.</p>
     </footer>
 
     <script>
-        // Reveal on scroll logic
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
+        function navigateTo(id) {
+            // Hide all sections
+            document.querySelectorAll('.page-section').forEach(section => {
+                section.classList.remove('active');
             });
-        }, { threshold: 0.1 });
 
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+            // Show target section
+            const target = document.getElementById(id);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0); // Always start at the top of the "new" page
+            }
+        }
     </script>
 </body>
 </html>
