@@ -13,13 +13,13 @@
         
         /* THE STRICTURE PAGE SYSTEM - FORCED HIDING */
         .page-section { 
-            display: none !important; /* Force hide everything */
+            display: none !important; 
             width: 100%; 
             min-height: 100vh; 
             padding-top: 120px;
         }
         .page-section.active { 
-            display: flex !important; /* Force show only active */
+            display: flex !important; 
             flex-direction: column;
         }
 
@@ -70,7 +70,7 @@
             <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div class="space-y-6 text-stone-600 leading-relaxed font-light">
                     <p class="text-xl serif italic text-stone-800">"We don't mask skin issues; we re-engineer the skin's health."</p>
-                    <p>At Kiswah OrganicCare, our philosophy is rooted in the **28-day dermatological cycle**. Mainstream beauty relies on silicones to create a fake smoothness. We utilize **Bio-identical Lipids** from Raw Shea and Aloe to actually rebuild the moisture barrier.</p>
+                    <p>At Kiswah OrganicCare, our philosophy is rooted in the 28-day dermatological cycle. Mainstream beauty relies on silicones to create a fake smoothness. We utilize Bio-identical Lipids from Raw Shea and Aloe to actually rebuild the moisture barrier.</p>
                     <p>Our target is the 18-30 demographic because this is when cellular turnover begins to slow. By introducing potent antioxidants early, we prevent hyperpigmentation before it becomes deep-seated environmental damage.</p>
                 </div>
                 <div class="bg-stone-50 p-10 rounded-2xl border border-stone-100">
@@ -95,25 +95,25 @@
             <p class="text-center text-stone-400 mb-20 uppercase tracking-[0.3em] text-[10px]">The Molecular Chemistry of Glow</p>
             
             <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-12 bg-white border border-stone-100 rounded-3xl transition-transform hover:-translate-y-2">
+                <div class="p-12 bg-white border border-stone-100 rounded-3xl">
                     <div class="text-[#8DA290] serif text-4xl mb-6 italic">01</div>
                     <h3 class="serif text-2xl mb-4">Raw Shea Butter</h3>
                     <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Rich in Cinnamic Acid</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">Unlike refined butter, our raw version contains high levels of **Stearic and Oleic acids**. These fatty acids are bio-compatible with human sebum, allowing for trans-dermal absorption that heals rough patches and increases elasticity at a cellular level.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">Our raw version contains high levels of Stearic and Oleic acids. These fatty acids are bio-compatible with human sebum, allowing for trans-dermal absorption that heals rough patches and increases elasticity at a cellular level.</p>
                 </div>
 
-                <div class="p-12 bg-white border border-stone-100 rounded-3xl transition-transform hover:-translate-y-2">
+                <div class="p-12 bg-white border border-stone-100 rounded-3xl">
                     <div class="text-[#8DA290] serif text-4xl mb-6 italic">02</div>
                     <h3 class="serif text-2xl mb-4">Rice Extract</h3>
                     <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Para-Aminobenzoic Acid</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">Rice contains **Ferulic Acid** and **Allantoin**. These chemical compounds act as natural photoprotectors. They inhibit Tyrosinase (the enzyme responsible for dark spots), effectively brightening the skin without the harsh thinning effects of chemical bleaches.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">Rice contains Ferulic Acid and Allantoin. These chemical compounds act as natural photoprotectors. They inhibit Tyrosinase (the enzyme responsible for dark spots), effectively brightening the skin without the harsh thinning effects of chemical bleaches.</p>
                 </div>
 
-                <div class="p-12 bg-white border border-stone-100 rounded-3xl transition-transform hover:-translate-y-2">
+                <div class="p-12 bg-white border border-stone-100 rounded-3xl">
                     <div class="text-[#8DA290] serif text-4xl mb-6 italic">03</div>
                     <h3 class="serif text-2xl mb-4">Coffee Bean</h3>
                     <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Methylxanthine Alkaloids</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">The high **Caffeine** content acts as a vasoconstrictor. This reduces redness and puffiness by constricting blood vessels near the surface, while the antioxidant polyphenols fight free radicals caused by urban pollution.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">The high Caffeine content acts as a vasoconstrictor. This reduces redness and puffiness by constricting blood vessels near the surface, while the antioxidant polyphenols fight free radicals caused by urban pollution.</p>
                 </div>
             </div>
         </div>
@@ -123,25 +123,41 @@
         <div class="max-w-7xl mx-auto">
             <h2 class="serif text-5xl mb-20">The Ritual</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="group">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/moisturizer.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"></div>
+                <div class="text-center">
+                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/moisturizer.jpg" class="w-full h-full object-cover"></div>
                     <h3 class="serif text-xl mb-4">Shea Moisturizer</h3>
-                    <div class="flex justify-between items-center border-t pt-6 border-stone-100"><span class="font-medium text-stone-800">Rs. 599</span><a href="https://wa.me/923242771691?text=Order: Shea Moisturizer" class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Direct Order</a></div>
+                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 900</span>
+                        <span class="font-medium text-stone-800">Rs. 599</span>
+                        <a href="https://wa.me/923242771691?text=Order: Shea Moisturizer" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    </div>
                 </div>
-                <div class="group">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/facewash.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"></div>
+                <div class="text-center">
+                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/facewash.jpg" class="w-full h-full object-cover"></div>
                     <h3 class="serif text-xl mb-4">Coffee Face Wash</h3>
-                    <div class="flex justify-between items-center border-t pt-6 border-stone-100"><span class="font-medium text-stone-800">Rs. 399</span><a href="https://wa.me/923242771691?text=Order: Face Wash" class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Direct Order</a></div>
+                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 700</span>
+                        <span class="font-medium text-stone-800">Rs. 399</span>
+                        <a href="https://wa.me/923242771691?text=Order: Face Wash" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    </div>
                 </div>
-                <div class="group">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/mask.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"></div>
+                <div class="text-center">
+                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/mask.jpg" class="w-full h-full object-cover"></div>
                     <h3 class="serif text-xl mb-4">Radiance Mask</h3>
-                    <div class="flex justify-between items-center border-t pt-6 border-stone-100"><span class="font-medium text-stone-800">Rs. 299</span><a href="https://wa.me/923242771691?text=Order: Mask" class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Direct Order</a></div>
+                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 500</span>
+                        <span class="font-medium text-stone-800">Rs. 299</span>
+                        <a href="https://wa.me/923242771691?text=Order: Mask" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    </div>
                 </div>
-                <div class="group">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/soap.jpg" class="w-full h-full object-cover transition duration-1000 group-hover:scale-105"></div>
+                <div class="text-center">
+                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/soap.jpg" class="w-full h-full object-cover"></div>
                     <h3 class="serif text-xl mb-4">Botanical Soap</h3>
-                    <div class="flex justify-between items-center border-t pt-6 border-stone-100"><span class="font-medium text-stone-800">Rs. 259</span><a href="https://wa.me/923242771691?text=Order: Soap" class="text-[10px] font-bold uppercase tracking-widest text-[#C5A059]">Direct Order</a></div>
+                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 400</span>
+                        <span class="font-medium text-stone-800">Rs. 259</span>
+                        <a href="https://wa.me/923242771691?text=Order: Soap" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -153,24 +169,15 @@
 
     <script>
         function navigateTo(id) {
-            console.log("Navigating to:", id);
-            
-            // 1. SELECT ALL SECTIONS
             const allSections = document.querySelectorAll('.page-section');
-            
-            // 2. FORCE HIDE EVERY SINGLE ONE (Using both CSS Class and Inline Style)
             allSections.forEach(section => {
                 section.classList.remove('active');
                 section.style.setProperty('display', 'none', 'important');
             });
-
-            // 3. FORCE SHOW ONLY THE ONE YOU WANT
             const target = document.getElementById(id);
             if (target) {
                 target.classList.add('active');
                 target.style.setProperty('display', 'flex', 'important');
-                
-                // 4. RESET SCROLL TO TOP
                 window.scrollTo({ top: 0, behavior: 'instant' });
             }
         }
