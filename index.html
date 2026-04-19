@@ -11,41 +11,26 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--cream); color: var(--charcoal); margin: 0; padding: 0; }
         .serif { font-family: 'Playfair Display', serif; }
         
-        /* THE STRICTURE PAGE SYSTEM - FORCED HIDING */
-        .page-section { 
-            display: none !important; 
-            width: 100%; 
-            min-height: 100vh; 
-            padding-top: 120px;
-        }
-        .page-section.active { 
-            display: flex !important; 
-            flex-direction: column;
-        }
+        /* THE STRICTURE PAGE SYSTEM */
+        .page-section { display: none !important; width: 100%; min-height: 100vh; padding-top: 120px; }
+        .page-section.active { display: flex !important; flex-direction: column; }
 
         .nav-blur { backdrop-filter: blur(20px); background: rgba(253, 251, 250, 0.98); border-bottom: 1px solid #f0f0f0; }
         .nav-link { cursor: pointer; font-size: 10px; letter-spacing: 0.15em; font-weight: 700; text-transform: uppercase; color: #444; }
         .nav-link:hover { color: var(--gold); }
         
-        .btn-main {
-            padding: 20px 50px;
-            border: 1px solid var(--charcoal);
-            font-size: 11px;
-            letter-spacing: 0.5em;
-            text-transform: uppercase;
-            font-weight: 800;
-            transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        }
+        .btn-main { padding: 20px 50px; border: 1px solid var(--charcoal); font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; font-weight: 800; transition: 0.4s; }
         .btn-main:hover { background: var(--charcoal); color: white; transform: translateY(-2px); }
+        
+        .discount-badge { font-size: 8px; font-weight: bold; background: #eef2ef; color: #5d6d5f; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
     </style>
 </head>
 <body>
 
     <nav class="nav-blur fixed top-0 w-full z-[999]">
         <div class="max-w-7xl mx-auto px-8 py-6 flex justify-between items-center">
-            <div onclick="navigateTo('hero-page')" class="cursor-pointer group">
+            <div onclick="navigateTo('hero-page')" class="cursor-pointer">
                 <span class="serif text-2xl font-bold tracking-tighter">KISWAH</span>
-                <div class="h-0.5 w-0 group-hover:w-full bg-stone-800 transition-all duration-500"></div>
             </div>
             <div class="flex space-x-8">
                 <span class="nav-link" onclick="navigateTo('philosophy')">Philosophy</span>
@@ -59,7 +44,6 @@
         <div class="max-w-3xl">
             <span class="text-[11px] tracking-[0.7em] text-[#C5A059] uppercase mb-6 block font-bold">Artisan Skin Nutrition</span>
             <h1 class="serif text-7xl md:text-9xl mb-12">Pure <span class="italic text-stone-300">Radiance</span></h1>
-            <p class="max-w-lg mx-auto text-stone-400 font-light text-lg mb-14">High-performance organic repair for the modern aesthetic.</p>
             <button onclick="navigateTo('collection')" class="btn-main">Explore Ritual</button>
         </div>
     </section>
@@ -71,20 +55,14 @@
                 <div class="space-y-6 text-stone-600 leading-relaxed font-light">
                     <p class="text-xl serif italic text-stone-800">"We don't mask skin issues; we re-engineer the skin's health."</p>
                     <p>At Kiswah OrganicCare, our philosophy is rooted in the 28-day dermatological cycle. Mainstream beauty relies on silicones to create a fake smoothness. We utilize Bio-identical Lipids from Raw Shea and Aloe to actually rebuild the moisture barrier.</p>
-                    <p>Our target is the 18-30 demographic because this is when cellular turnover begins to slow. By introducing potent antioxidants early, we prevent hyperpigmentation before it becomes deep-seated environmental damage.</p>
                 </div>
                 <div class="bg-stone-50 p-10 rounded-2xl border border-stone-100">
                     <h4 class="serif text-xl mb-4">The Ethical Standard</h4>
                     <ul class="text-sm space-y-4 text-stone-500">
                         <li>• Small-batch production for maximum potency.</li>
                         <li>• Zero synthetic fragrances or parabens.</li>
-                        <li>• Sustainably sourced botanical extracts.</li>
-                        <li>• Scientific formulation for Pakistani climate needs.</li>
                     </ul>
                 </div>
-            </div>
-            <div class="mt-20 text-center">
-                <button onclick="navigateTo('hero-page')" class="text-[10px] uppercase tracking-widest font-bold text-stone-400 border-b border-stone-200">Back Home</button>
             </div>
         </div>
     </section>
@@ -93,27 +71,18 @@
         <div class="max-w-6xl mx-auto">
             <h2 class="serif text-5xl mb-6 text-center">Botanic Science</h2>
             <p class="text-center text-stone-400 mb-20 uppercase tracking-[0.3em] text-[10px]">The Molecular Chemistry of Glow</p>
-            
             <div class="grid md:grid-cols-3 gap-10">
                 <div class="p-12 bg-white border border-stone-100 rounded-3xl">
-                    <div class="text-[#8DA290] serif text-4xl mb-6 italic">01</div>
                     <h3 class="serif text-2xl mb-4">Raw Shea Butter</h3>
-                    <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Rich in Cinnamic Acid</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">Our raw version contains high levels of Stearic and Oleic acids. These fatty acids are bio-compatible with human sebum, allowing for trans-dermal absorption that heals rough patches and increases elasticity at a cellular level.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">High in Stearic and Oleic acids for deep trans-dermal absorption.</p>
                 </div>
-
                 <div class="p-12 bg-white border border-stone-100 rounded-3xl">
-                    <div class="text-[#8DA290] serif text-4xl mb-6 italic">02</div>
                     <h3 class="serif text-2xl mb-4">Rice Extract</h3>
-                    <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Para-Aminobenzoic Acid</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">Rice contains Ferulic Acid and Allantoin. These chemical compounds act as natural photoprotectors. They inhibit Tyrosinase (the enzyme responsible for dark spots), effectively brightening the skin without the harsh thinning effects of chemical bleaches.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">Contains Ferulic Acid and Allantoin to brighten and correct tone.</p>
                 </div>
-
                 <div class="p-12 bg-white border border-stone-100 rounded-3xl">
-                    <div class="text-[#8DA290] serif text-4xl mb-6 italic">03</div>
                     <h3 class="serif text-2xl mb-4">Coffee Bean</h3>
-                    <p class="text-xs text-stone-400 mb-6 uppercase tracking-widest font-bold">Methylxanthine Alkaloids</p>
-                    <p class="text-sm text-stone-500 leading-relaxed">The high Caffeine content acts as a vasoconstrictor. This reduces redness and puffiness by constricting blood vessels near the surface, while the antioxidant polyphenols fight free radicals caused by urban pollution.</p>
+                    <p class="text-sm text-stone-500 leading-relaxed">High Caffeine content constricts blood vessels to reduce redness.</p>
                 </div>
             </div>
         </div>
@@ -122,42 +91,61 @@
     <section id="collection" class="page-section px-8">
         <div class="max-w-7xl mx-auto">
             <h2 class="serif text-5xl mb-20">The Ritual</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="text-center">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/moisturizer.jpg" class="w-full h-full object-cover"></div>
-                    <h3 class="serif text-xl mb-4">Shea Moisturizer</h3>
-                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
-                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 900</span>
-                        <span class="font-medium text-stone-800">Rs. 599</span>
-                        <a href="https://wa.me/923242771691?text=Order: Shea Moisturizer" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
+                
+                <div class="text-center bg-stone-50 p-6 rounded-xl border border-stone-100">
+                    <div class="aspect-square mb-6 overflow-hidden rounded-sm"><img src="images/kit.jpg" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-xl mb-2">Complete Kit</h3>
+                    <span class="discount-badge">10% OFF</span>
+                    <div class="flex justify-center items-center mt-4">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 1890</span>
+                        <span class="font-bold text-lg">Rs. 1701</span>
                     </div>
+                    <a href="https://wa.me/923242771691?text=Order: Complete Kit" class="block mt-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order Now</a>
                 </div>
+
                 <div class="text-center">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/facewash.jpg" class="w-full h-full object-cover"></div>
-                    <h3 class="serif text-xl mb-4">Coffee Face Wash</h3>
-                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
-                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 700</span>
-                        <span class="font-medium text-stone-800">Rs. 399</span>
-                        <a href="https://wa.me/923242771691?text=Order: Face Wash" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/moisturizer.jpg" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-xl mb-2">Shea Moisturizer</h3>
+                    <span class="discount-badge">5% OFF</span>
+                    <div class="flex justify-center items-center mt-2">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 800</span>
+                        <span class="font-bold">Rs. 760</span>
                     </div>
+                    <a href="https://wa.me/923242771691?text=Order: Shea Moisturizer" class="block mt-2 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
                 </div>
+
                 <div class="text-center">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/mask.jpg" class="w-full h-full object-cover"></div>
-                    <h3 class="serif text-xl mb-4">Radiance Mask</h3>
-                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/facewash.jpg" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-xl mb-2">Coffee Face Wash</h3>
+                    <span class="discount-badge">5% OFF</span>
+                    <div class="flex justify-center items-center mt-2">
                         <span class="line-through text-stone-400 text-xs mr-2">Rs. 500</span>
-                        <span class="font-medium text-stone-800">Rs. 299</span>
-                        <a href="https://wa.me/923242771691?text=Order: Mask" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                        <span class="font-bold">Rs. 475</span>
                     </div>
+                    <a href="https://wa.me/923242771691?text=Order: Face Wash" class="block mt-2 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
                 </div>
+
                 <div class="text-center">
-                    <div class="aspect-[3/4] bg-stone-100 mb-8 overflow-hidden rounded-sm"><img src="images/soap.jpg" class="w-full h-full object-cover"></div>
-                    <h3 class="serif text-xl mb-4">Botanical Soap</h3>
-                    <div class="flex justify-center items-center border-t pt-6 border-stone-100">
-                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 400</span>
-                        <span class="font-medium text-stone-800">Rs. 259</span>
-                        <a href="https://wa.me/923242771691?text=Order: Soap" class="ml-4 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/mask.jpg" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-xl mb-2">Radiance Mask</h3>
+                    <span class="discount-badge">5% OFF</span>
+                    <div class="flex justify-center items-center mt-2">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 450</span>
+                        <span class="font-bold">Rs. 427</span>
                     </div>
+                    <a href="https://wa.me/923242771691?text=Order: Mask" class="block mt-2 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
+                </div>
+
+                <div class="text-center">
+                    <div class="aspect-[3/4] bg-stone-100 mb-6 overflow-hidden"><img src="images/soap.jpg" class="w-full h-full object-cover"></div>
+                    <h3 class="serif text-xl mb-2">Botanical Soap</h3>
+                    <span class="discount-badge">5% OFF</span>
+                    <div class="flex justify-center items-center mt-2">
+                        <span class="line-through text-stone-400 text-xs mr-2">Rs. 350</span>
+                        <span class="font-bold">Rs. 333</span>
+                    </div>
+                    <a href="https://wa.me/923242771691?text=Order: Soap" class="block mt-2 text-[10px] font-bold uppercase tracking-widest text-[#C5A059] underline">Order</a>
                 </div>
             </div>
         </div>
