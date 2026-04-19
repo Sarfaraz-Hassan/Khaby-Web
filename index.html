@@ -12,7 +12,13 @@
         .serif { font-family: 'Playfair Display', serif; }
         
         /* THE STRICTURE PAGE SYSTEM */
-        .page-section { display: none !important; width: 100%; min-height: 100vh; padding-top: 120px; }
+        .page-section { 
+            display: none !important; 
+            width: 100%; 
+            min-height: 100vh; 
+            padding-top: 120px; 
+            padding-bottom: 50px;
+        }
         .page-section.active { display: flex !important; flex-direction: column; }
 
         .nav-blur { backdrop-filter: blur(20px); background: rgba(253, 251, 250, 0.98); border-bottom: 1px solid #f0f0f0; }
@@ -22,7 +28,7 @@
         .btn-main { padding: 20px 50px; border: 1px solid var(--charcoal); font-size: 11px; letter-spacing: 0.5em; text-transform: uppercase; font-weight: 800; transition: 0.4s; }
         .btn-main:hover { background: var(--charcoal); color: white; transform: translateY(-2px); }
         
-        .discount-badge { font-size: 8px; font-weight: bold; background: #eef2ef; color: #5d6d5f; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+        .discount-badge { font-size: 8px; font-weight: bold; background: #eef2ef; color: #5d6d5f; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; margin-bottom: 5px; display: inline-block; }
     </style>
 </head>
 <body>
@@ -94,12 +100,12 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
                 
                 <div class="text-center bg-stone-50 p-6 rounded-xl border border-stone-100">
-                    <div class="aspect-video mb-6 overflow-hidden rounded-sm bg-stone-100">
-                        <img src="images/kit.jpg" class="w-full h-full object-contain">
+                    <div class="w-full mb-6">
+                        <img src="images/kit.jpg" class="w-full h-auto">
                     </div>
                     <h3 class="serif text-xl mb-2">Complete Kit</h3>
                     <span class="discount-badge">10% OFF</span>
-                    <div class="flex justify-center items-center mt-4">
+                    <div class="flex justify-center items-center mt-2">
                         <span class="line-through text-stone-400 text-xs mr-2">Rs. 1890</span>
                         <span class="font-bold text-lg">Rs. 1701</span>
                     </div>
